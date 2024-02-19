@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,noarchive,nofollow,noimageindex">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        html{
+            height: 100vh;
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            margin: 0px;
+            padding: 0px;
+            background-color: #d7d8cc;
+        }
+        .area {
+            margin: 15px;
+            padding: 10px;
+            height: 100%;
+            text-align: center;        
+        }
+        .question {
+            color: #A1E6A1; /* 文字色 */
+            font-weight: bold; /* 文字の太さ */
+            text-align: center;
+            border-radius: 0;
+            padding: 5px;
+        }
+        .textbookarea {
+            text-align: left;
+        }
+        .jump,.tohome ,.to_htop , .to_HEtop{
+            color: blue;
+            text-decoration:underline;
+            font-size: larger;
+            cursor: pointer;
+        }
+        .jump , .to_htop, .to_HEtop{
+            line-height: 4em !important; 
+        }
+        #main{
+            line-height: 2.5em;
+        }
+
+    </style>
+
+    <script>
+            /*【新しく追加するとき】
+
+                function element_hide()を増やす
+                to〇〇のfunctionを増やす
+                がんばる
+
+            */
+
+            $(function() {
+            function element_hide(){
+            $("#home,#health,#home_economics,#h_textbook_1,#h_textbook_2,#h_textbook_3,#h_textbook_4,#h_textbook_5,#h_textbook_6,#HE_textbook_1,#HE_textbook_2,#HE_textbook_3,#HE_textbook_4,#HE_textbook_5,#HE_textbook_6").hide();
+            }
+        
+            element_hide();
+            $("#home").show();
+            
+
+            $("#to_health").click(function(){
+                element_hide();
+                $("#health").show();
+                $('title').html("保健");
+            })
+
+            $("#to_h1").click(function(){
+                element_hide();
+                $("#h_textbook_1").show();
+                $('title').html("教科書 N0.1");
+            })
+
+            $("#to_h2").click(function(){
+                element_hide();
+                $("#h_textbook_2").show();
+                $('title').html("教科書 N0.2");
+
+            })
+
+            $("#to_h3").click(function(){
+                element_hide();
+                $("#h_textbook_3").show();
+                $('title').html("教科書 N0.3");
+
+            })
+
+            $("#to_h4").click(function(){
+                element_hide();
+                $("#h_textbook_4").show();
+                $('title').html("教科書 N0.4");
+
+            })
+
+            $("#to_h5").click(function(){
+                element_hide();
+                $("#h_textbook_5").show();
+                $('title').html("教科書 N0.5");
+
+            })
+
+            $("#to_h6").click(function(){
+                element_hide();
+                $("#h_textbook_6").show();
+                $('title').html("教科書 N0.6");
+            })
+
+            $(".tohome").click(function(){
+                element_hide();
+                $("#home").show();
+                $('title').html("ホーム");
+            })
+
+            $(".to_htop").click(function(){
+                element_hide();
+                $("#health").show();
+                $('title').html("保健");
+            })
+
+
+
+            var Q_and_A = "解答"; //ボタンに表示されるやつ →変数"Q_and_A"
+            $(".question").val(Q_and_A); //変数"Q_and_A"をボタンに表示
+            $(".question").css({ "background-color": "black", "color": "#A1E6A1" }); //ボタン背景変える
+        
+            $(".question").click(function () {
+                //ボタンクリック時の動作
+                if ((this).value == Q_and_A) {
+                    this.value = $(this).data("answer");
+                    $(this).css({ "background-color": "#A1E6A1", "color": "black" }); //ボタン背景変える
+                    // $(this).css({ "background-color": "white", "color": "black" }); //ボタン背景変える
+                } else {
+                    this.value = Q_and_A;
+                    $(this).css({ "background-color": "black", "color": "#A1E6A1" }); //ボタン背景変える
+                    // $(this).css({ "background-color": "black", "color": "white" }); //ボタン背景変える
+                };
+            });
+        });
+
+        
+
+    </script>
+
+</head>
+<body>
+
+    <div id="main">
+        <div id="home" class="area"> <!--保健-->
+            <h2>第4回考査対策 保健</h2>
+            <p>
+                <span id="to_h1" class="jump">教科書 No.1へ移動</span><br>
+                <span id="to_h2" class="jump">教科書 No.2へ移動</span><br>
+                <span id="to_h3" class="jump">教科書 No.3へ移動</span><br>
+                <span id="to_h4" class="jump">教科書 No.4へ移動</span><br>
+                <span id="to_h5" class="jump">教科書 No.5へ移動</span><br>
+                <span id="to_h6" class="jump">教科書 No.6へ移動</span><br>
+            </p>
+        </div>
+    
+        <div id="health_textbook"> <!--保健の教科書-->
+            <div id="h_textbook_1" class="area"> <!--教科書 1-->
+                <p>
+                <div class="textbookarea">
+                    <!--ここに内容を入力-->
+                    <h1>06 運動と健康</h1>
+                    <h2>1 健康から見た運動の定義</h2>
+                        <h3>1 運動の重要性</h3>
+                        <p>運動は、<input type="button" class="question" data-answer="体力の維持・向上">に役立つだけではありません。<input type="button" class="question" data-answer="生活習慣病">などの予防、<input type="button" class="question" data-answer="発育・発達">の促進、<input type="button" class="question" data-answer="老化">の防止によい影響を及ぼすなど、こんにちの生活になくてはならない重要な<input type="button" class="question" data-answer="意義">をもっています。運動は、スポーツとして楽しみながら、<input type="button" class="question" data-answer="家族">や<input type="button" class="question" data-answer="仲間">との<input type="button" class="question" data-answer="交流">をはかることができ、さらに、<input type="button" class="question" data-answer="ストレス">の解消など、<input type="button" class="question" data-answer="心の健康">にも効果的な側面をもっています。</p>
+
+                        <h3>2 健康にかかわる運動の課題</h3>
+                        <p>現代社会では、<input type="button" class="question" data-answer="家事">や<input type="button" class="question" data-answer="仕事">の<input type="button" class="question" data-answer="省力">化や<input type="button" class="question" data-answer="交通手段">の発達によって<input type="button" class="question" data-answer="身体活動量">が低下しています。また、<input type="button" class="question" data-answer="運動">をする子どもとそうでない子どもの<input type="button" class="question" data-answer="二極化">や若い世代の<input type="button" class="question" data-answer="運動不足">が指摘されています。その結果、さまざまな<input type="button" class="question" data-answer="健康問題">が深刻化しています。<br>健康のための運動には、<input type="button" class="question" data-answer="適切な運動量">が必要です。運動量が少ない場合、たとえば<input type="button" class="question" data-answer="心臓病">になる可能性が高まるなど、体にさまざまな影響が出てきます。ただし、<input type="button" class="question" data-answer="過度な運動">もよくありません。<input type="button" class="question" data-answer="けが">をしたり、<input type="button" class="question" data-answer="身体的な障害">を負ったりすることもあるからです。<input type="button" class="question" data-answer="女性アスリート">に生じやすい健康影響も課題となっています。</p>
+ 
+ 
+                    <h2>2 健康によい運動のしかた</h2>
+                        <h3>1 運動の種類と効果</h3>
+                        <p><input type="button" class="question" data-answer="運動不足">になりがちなこんにちの日常生活のなかで、<input type="button" class="question" data-answer="自分にあった運動">を積極的におこなうことができれば理想的です。<input type="button" class="question" data-answer="ジョギング">や<input type="button" class="question" data-answer="水泳">などの酸素を十分に体に取り入れながらおこなう運動（<input type="button" class="question" data-answer="有酸素運動">）は、<input type="button" class="question" data-answer="循環器系">の能力や<input type="button" class="question" data-answer="持続的に運動できる筋肉">を発達させることができます。<input type="button" class="question" data-answer="心臓病">や<input type="button" class="question" data-answer="脳卒中">につながる<input type="button" class="question" data-answer="動脈硬化">や、<input type="button" class="question" data-answer="糖尿病">の予防などに効果的であり、<input type="button" class="question" data-answer="メタボリックシンドローム">の改善にも役立ちます。<br>筋肉に強い負荷をかける運動は、<input type="button" class="question" data-answer="筋力">を維持・向上させ、<input type="button" class="question" data-answer="転倒">や<input type="button" class="question" data-answer="寝たきり">を防ぐ効果があります。また、<input type="button" class="question" data-answer="走っ">たり<input type="button" class="question" data-answer="跳ん">だりするような<input type="button" class="question" data-answer="骨">に負荷をかける運動は，骨折や骨粗しょう症を予防するのにも効果的です。</p>
+
+                        <h3>2 運動の強度や量と日々の運動の実践</h3>
+                        <p>将来起こり得る<input type="button" class="question" data-answer="生活習慣病">の可能性や、<input type="button" class="question" data-answer="生活機能">の低下のリスクを減少させるためには、運動の<input type="button" class="question" data-answer="強度">や<input type="button" class="question" data-answer="量">を一定レベル以上に保つことも必要です。具体的には<input type="button" class="question" data-answer="歩行">またはそれと同等以上の強度の<input type="button" class="question" data-answer="身体活動">を毎日<input type="button" class="question" data-answer="60">分以上おこなうとともに、<input type="button" class="question" data-answer="息">が弾み<input type="button" class="question" data-answer="汗">をかく程度の運動を毎週<input type="button" class="question" data-answer="60">分おこなうことが効果的です。また、<input type="button" class="question" data-answer="買い物">、<input type="button" class="question" data-answer="洗濯物干し">、<input type="button" class="question" data-answer="風呂掃除">などの家事や、<input type="button" class="question" data-answer="犬の散歩">、<input type="button" class="question" data-answer="通学">などの生活上の活動も身体活動に含まれ、健康に貢献します。<br>それぞれの運動の効果や適切な<input type="button" class="question" data-answer="強度">・<input type="button" class="question" data-answer="量">を理解し、<input type="button" class="question" data-answer="生涯">を通じて目的に応じて運動を続けることは<input type="button" class="question" data-answer="健康維持">の面からも大切です。</p>
+                    </div>
+                <span class="tohome">ホームへ戻る</span>
+                </p>
+            </div>
+        
+            <div id="h_textbook_2" class="area"> <!--教科書 2-->
+                <p>
+                <div class="textbookarea">
+                    <!--ここに内容を入力-->
+                    <h1>07 食事と健康</h1>
+                    <h2>1 健康的な食生活の意義</h2>
+                        <h3>1 食事の重要性</h3>
+                        <p>私たちが成長し、健康に生きていくためにはさまざまな<input type="button" class="question" data-answer="栄養素">が必要であり、私たちは、それらを毎日の<input type="button" class="question" data-answer="食事">からとり入れています。各栄養素の必要量は、<input type="button" class="question" data-answer="性別">や<input type="button" class="question" data-answer="年齢">、<input type="button" class="question" data-answer="体の大きさ">、<input type="button" class="question" data-answer="身体活動量">などによって異なります。とくに活動量が<input type="button" class="question" data-answer="多く">、体に<input type="button" class="question" data-answer="変化">がみられる高校生は、日々の生活のなかで食事の<input type="button" class="question" data-answer="質">と<input type="button" class="question" data-answer="量">に留意する必要があります。<br>また、食事は人と人との大切な<input type="button" class="question" data-answer="コミュニケーション">の場にもなり、食事を楽しむことにより<input type="button" class="question" data-answer="心豊かな生活">を送ることもできます。このように食事は<input type="button" class="question" data-answer="心身両面">の健康にとって重要な<input type="button" class="question" data-answer="意義">をもっています。</p>
+
+                        <h3>2 不適切な食事と健康</h3>
+                        <p>エネルギーの<input type="button" class="question" data-answer="過剰摂取">は肥満の原因となり、<input type="button" class="question" data-answer="メタボリックシンドローム">や<input type="button" class="question" data-answer="生活習慣病">などの病気を引き起こします。一方、エネルギー摂取が少なすぎると<input type="button" class="question" data-answer="やせ">の原因となります。とくに、極端な<input type="button" class="question" data-answer="ダイエット">は極度の<input type="button" class="question" data-answer="やせ">をもたらし健康を害します。栄養素の偏りは<input type="button" class="question" data-answer="体調不良">やさまざまな<input type="button" class="question" data-answer="病気">につながることがあります。たとえば、食塩の過剰摂取は<input type="button" class="question" data-answer="高血圧症">や<input type="button" class="question" data-answer="胃がん">を引き起こしたり、カルシウムの不足は<input type="button" class="question" data-answer="骨粗しょう症">を招いたりします。したがって、エネルギーや栄養素を過不足なく摂取することが大切です。</p>
+
+                    <h2>2 健康によい食事のとり方</h2>
+                        <h3>1 バランスのよい食事</h3>
+                        <p>健康によい食生活を実現するためには<input type="button" class="question" data-answer="栄養">のバランスを考えることが重要です。たとえば、<input type="button" class="question" data-answer="数多く">の食材を組みあわせることで多様な<input type="button" class="question" data-answer="栄養素">を摂取することができ、それが<input type="button" class="question" data-answer="バランス">のよい食事につながります。とくに<input type="button" class="question" data-answer="朝食">の欠食は<input type="button" class="question" data-answer="午前中">の活力を<input type="button" class="question" data-answer="低下">させるだけでなく、<input type="button" class="question" data-answer="1日">の活動に必要な<input type="button" class="question" data-answer="栄養素">を備りなくとり入れることも難しくなるなど、健康にとってさまざまな<input type="button" class="question" data-answer="影響">があります。<br>また、栄養素を補うためにいわゆる<input type="button" class="question" data-answer="サプリメント">を摂取する人もいますが、本来、<input type="button" class="question" data-answer="食事">からの栄養摂取や<input type="button" class="question" data-answer="食生活">の改善が基本です。サプリメントの摂取にあたっては、<input type="button" class="question" data-answer="機能性">や<input type="button" class="question" data-answer="目安量">など公開されている情報を十分に<input type="button" class="question" data-answer="確認">する必要があります。</p>
+
+                        <h3>2 生活リズムと健康によい食事</h3>
+                        <p>生活リズムは、<input type="button" class="question" data-answer="食事">、<input type="button" class="question" data-answer="運動">、<input type="button" class="question" data-answer="睡眠">、<input type="button" class="question" data-answer="排便">などを<input type="button" class="question" data-answer="規則正しく">おこなうことで整えられます。とくに、<input type="button" class="question" data-answer="朝">、<input type="button" class="question" data-answer="昼">、<input type="button" class="question" data-answer="夜">の食事を<input type="button" class="question" data-answer="規則">的にとることで、生活の<input type="button" class="question" data-answer="リズム">がつくられます。<br>健康的な食生活には三食の<input type="button" class="question" data-answer="バランス">だけでなく、<input type="button" class="question" data-answer="食材の選択">、<input type="button" class="question" data-answer="調理方法">、<input type="button" class="question" data-answer="誰と食べたか">など、さまざまな要因がかかわってきます。また、<input type="button" class="question" data-answer="生活リズム">の観点から、<input type="button" class="question" data-answer="運動">や<input type="button" class="question" data-answer="睡眠">との関連を考えることも忘れてはいけません。</p>
+                </div>
+                <span class="tohome">ホームへ戻る</span>
+                </p>
+            </div>
+        
+            <div id="h_textbook_3" class="area"> <!--教科書 3-->
+                <p>
+                <div class="textbookarea">
+                    <!--ここに内容を入力-->
+                    <h1>08 休養・睡眠と健康</h1>
+                    <h2>1 健康からみた休養の意義</h2>
+                        <h3>1 休養の重要性</h3>
+                        <p><input type="button" class="question" data-answer="運動">や<input type="button" class="question" data-answer="勉強">、<input type="button" class="question" data-answer="仕事">などで体や脳が疲れると、<input type="button" class="question" data-answer="免疫">の働きが弱まったり、<input type="button" class="question" data-answer="判断力">が鈍って事故を招いたりするなどして、<input type="button" class="question" data-answer="健康">を損ねることにもなります。<input type="button" class="question" data-answer="疲労">はまた、<input type="button" class="question" data-answer="情緒">を不安定にし、<input type="button" class="question" data-answer="活力">を低下させるなど、<input type="button" class="question" data-answer="生活の質">に大きく影響します。したがって、適度な<input type="button" class="question" data-answer="休養">によって疲労を取り除くことが重要です。</p>
+
+                        <h3>2 健康によい休養のとり方</h3>
+                        <p><input type="button" class="question" data-answer="省力化">が進んだ現代の生活では、<input type="button" class="question" data-answer="パソコン">使用にみられるように、<input type="button" class="question" data-answer="目">や<input type="button" class="question" data-answer="指先">など、体の<input type="button" class="question" data-answer="一部分">を使う活動が多くなっています。こうした活動を続けると、目や手など体の一部分だけの疲労（<input type="button" class="question" data-answer="局所疲労">）や<input type="button" class="question" data-answer="精神的">な疲労が起こります。それらは<input type="button" class="question" data-answer="全身疲労">に比べて<input type="button" class="question" data-answer="休養">の必要性が自覚されにくく、知らない間に疲労を<input type="button" class="question" data-answer="蓄積">させることになります。疲労が蓄積した場合でも、適切に<input type="button" class="question" data-answer="休養">をとれば疲労は回復し、<br>活力がよみがえります。<br>休養のとり方はさまざまです。作業の途中で<input type="button" class="question" data-answer="休息">や<input type="button" class="question" data-answer="休憩">をとることによって、こまめに疲労を回復することが有効です。また、たんに体を休めるだけではなく、<input type="button" class="question" data-answer="スポーツ">などで積極的に体を動かすことや<input type="button" class="question" data-answer="趣味">を楽しんだりすることによる<input type="button" class="question" data-answer="積極的休養">も効果的です。<input type="button" class="question" data-answer="積極的休養">は、体の疲労を回復するとともに、<input type="button" class="question" data-answer="ストレス">の解消にもつながります。</p>
+
+                    <h2>2 健康からみた睡眠の意義</h2>
+                        <h3>1 睡眠の重要性</h3>
+                        <p><input type="button" class="question" data-answer="睡眠">は、体や脳の疲労を回復したり、<input type="button" class="question" data-answer="発育">・<input type="button" class="question" data-answer="発達">を促したりする重要な役割を担っているだけでなく、<input type="button" class="question" data-answer="健康">の<input type="button" class="question" data-answer="保持増進">にも重要な働きをしています。長年の<input type="button" class="question" data-answer="睡眠習慣">は健康にも影響を及ぼします。必要な<input type="button" class="question" data-answer="睡眠時間">には個人差があり、<input type="button" class="question" data-answer="年齢">や<input type="button" class="question" data-answer="季節">によっても変化しますが、日中の<input type="button" class="question" data-answer="眠気">で困らない程度の睡眠が必要です。</p>
+
+                        <h3>2 健康によい睡眠のとり方</h3>
+                        <p>生活の<input type="button" class="question" data-answer="夜型化">は、<input type="button" class="question" data-answer="睡眠不足">だけでなく、<input type="button" class="question" data-answer="睡眠の質">も変化させ、<input type="button" class="question" data-answer="疲労">をとりにくくしています。また、<input type="button" class="question" data-answer="スマートフォン">や<input type="button" class="question" data-answer="パソコン">、<input type="button" class="question" data-answer="テレビ">などの長時間の利用は、<input type="button" class="question" data-answer="睡眠時間">が短くなるだけではなく、眠くなるのを妨げ、<input type="button" class="question" data-answer="熟睡">できないなどの影響を及ぼします。<br><input type="button" class="question" data-answer="快適">な睡眠を確保するためには、寝る前に<input type="button" class="question" data-answer="コーヒー">などの刺激物をとらない、<input type="button" class="question" data-answer="入浴">などでリラックスするといった就寝前の工夫が考えられます。また、<input type="button" class="question" data-answer="適度な運動">は、<input type="button" class="question" data-answer="睡眠の質">を高めます。さらに、目覚めた後に<input type="button" class="question" data-answer="日光">を浴びることは、1日の行動に適したリズムをつくるのに役立ちます。これらの工夫により、自分にあった<input type="button" class="question" data-answer="睡眠時間">をみつけ、<input type="button" class="question" data-answer="規則的">な<input type="button" class="question" data-answer="睡眠習慣">を身につけるなど、自ら<input type="button" class="question" data-answer="快適">な睡眠をとることができるのです。</p>
+
+                </div>
+                <span class="tohome">ホームへ戻る</span>
+                </p>
+            </div>
+        
+            <div id="h_textbook_4" class="area"> <!--教科書 4-->
+                <p>
+                <div class="textbookarea">
+                    <!--ここに内容を入力-->
+                    <h1>09 喫煙と健康</h1>
+                    <h2>1喫煙の影響</h2>
+                            <p>たばこの煙には多くの<input type="button" class="question" data-answer="有害物質">が含まれるため、喫煙は<input type="button" class="question" data-answer="心身">の健康にさまざまな<input type="button" class="question" data-answer="悪影響">を及ぼします。たとえば、<input type="button" class="question" data-answer="運動">時に<input type="button" class="question" data-answer="息切れ">する、<input type="button" class="question" data-answer="肌の老化">を早めるという影響は、吸い始めて間もなくあらわれます。（<input type="button" class="question" data-answer="急性影響">）。さらに喫煙を続けると、<input type="button" class="question" data-answer="がん">や<input type="button" class="question" data-answer="心臓病">、<input type="button" class="question" data-answer="COPD">などの<input type="button" class="question" data-answer="生活習慣病">を発病しやすくなります（<input type="button" class="question" data-answer="慢性影響">）。これらの害は、喫煙開始時期が<input type="button" class="question" data-answer="早い">ほど大きくなります。それは、<input type="button" class="question" data-answer="発育途上">にある体の諸器官が有害物質の影響を受けやすいためです。<br>また、喫煙者以外の人が健康被害を受ける<input type="button" class="question" data-answer="受動喫煙">の害も深刻です。たとえば夫が喫煙者の場合、非喫煙者である妻の<input type="button" class="question" data-answer="肺がん死亡率">が高くなります。また<input type="button" class="question" data-answer="妊婦">の喫煙によって、<input type="button" class="question" data-answer="早産">や<input type="button" class="question" data-answer="流産">などの可能性が高まります。さらに喫煙による<input type="button" class="question" data-answer="病気">や<input type="button" class="question" data-answer="死亡">のために<input type="button" class="question" data-answer="医療費">が増大したり、貴重な<input type="button" class="question" data-answer="労働力">が失われたりするなど、社会全体に大きな<input type="button" class="question" data-answer="損失">をもたらします。</p>
+
+                    <h2>2 喫煙への対策</h2>
+                        <h3>1 喫煙の開始・継続要因</h3>
+                        <p>喫煙の開始には、<input type="button" class="question" data-answer="好奇心">や低い<input type="button" class="question" data-answer="自尊感情">などの<input type="button" class="question" data-answer="個人的">な要因が関係しています。また、<input type="button" class="question" data-answer="家族">、<input type="button" class="question" data-answer="友人">などの喫煙や<input type="button" class="question" data-answer="身近な人">からのすすめという<input type="button" class="question" data-answer="周囲">の影響、<input type="button" class="question" data-answer="マスメディア">による<input type="button" class="question" data-answer="宣伝">・<input type="button" class="question" data-answer="広告">、喫煙場面の<input type="button" class="question" data-answer="放映">などの<input type="button" class="question" data-answer="社会的">な要因も喫煙開始の一因と考えられています。一度喫煙を開始するとそのまま喫煙を続けることが多いのは、たばこの煙に含まれる<input type="button" class="question" data-answer="ニコチン">に<input type="button" class="question" data-answer="依存性">があるからです。そのため、<input type="button" class="question" data-answer="習慣化">すると自分の意思ではやめることが非常に難しくなります。</p>
+
+                        <h3>2 個人への喫煙対策</h3>
+                        <p>日本では、<input type="button" class="question" data-answer="小学校">から喫煙の<input type="button" class="question" data-answer="害">に関して学習する機会があり、正しい<input type="button" class="question" data-answer="知識">の普及と健全な<input type="button" class="question" data-answer="価値観">を育成しています。また、<input type="button" class="question" data-answer="ニコチン">依存によってたばこをやめられない状態を<input type="button" class="question" data-answer="病気">とみなし、<input type="button" class="question" data-answer="医療保険">で治療を受けられるようにするなど、禁煙を<input type="button" class="question" data-answer="支援">し、喫煙者と喫煙の被害を減らそうとしています。</p>
+
+                        <h3>3 社会環境への喫煙対策</h3>
+                        <p><input type="button" class="question" data-answer="健康増進">法では、公共の場での<input type="button" class="question" data-answer="禁煙">や<input type="button" class="question" data-answer="分煙">が義務づけられ、<input type="button" class="question" data-answer="非喫煙者">やとくに健康影響が大きい<input type="button" class="question" data-answer="子ども">や<input type="button" class="question" data-answer="患者">の健康を守るために役立っています。また、若い人の<input type="button" class="question" data-answer="喫煙">による健康被害を防ぐために<input type="button" class="question" data-answer="20歳未満の者の喫煙の禁止に関する法律">が定められています。世界的にもさまざまな対策が取られています。<input type="button" class="question" data-answer="WHO">では<input type="button" class="question" data-answer="たばこ規制枠組条約">が採択され、たばこのパッケージへの<input type="button" class="question" data-answer="警告表示">の強化や<input type="button" class="question" data-answer="広告">の規制、<input type="button" class="question" data-answer="自動販売機">で<input type="button" class="question" data-answer="20">歳未満がたばこを買えないしくみをつくることなどが求められています。日本では、<input type="button" class="question" data-answer="広告">への規制や<input type="button" class="question" data-answer="公共">の場での禁煙対策が不十分であり、また新しいタイプのたばこへの対策などの課題が残されています。</p>
+
+                </div>
+                <span class="tohome">ホームへ戻る</span>
+                </p>
+            </div>
+        
+            <div id="h_textbook_5" class="area"> <!--教科書 5-->
+                <p>
+                <div class="textbookarea">
+                    <!--ここに内容を入力-->
+                    <h1>10 飲酒と健康</h1>
+                    <h2>1 飲酒の影響</h2>
+                        <h3>1 飲酒の健康影響</h3>
+                        <p><input type="button" class="question" data-answer="アルコール">には、脳の働きを<input type="button" class="question" data-answer="抑制">する作用があります。少量であれば、<input type="button" class="question" data-answer="食欲が増す">、<input type="button" class="question" data-answer="リラックスする">などの効用もありますが、量が増えると<input type="button" class="question" data-answer="判断力">や<input type="button" class="question" data-answer="体の動き">が鈍くなり、<input type="button" class="question" data-answer="転倒">・<input type="button" class="question" data-answer="転落">や「<input type="button" class="question" data-answer="イッキ飲み">」にともなう<input type="button" class="question" data-answer="急性アルコール中毒">による死亡など、さまざまな問題を起こします。また、<input type="button" class="question" data-answer="妊婦">の飲酒は、アルコールが<input type="button" class="question" data-answer="胎児">の発育に悪影響を及ぼし、<input type="button" class="question" data-answer="低体重">や<input type="button" class="question" data-answer="脳の障害">などを引き起こす可能性があります。<br>長期にわたって<input type="button" class="question" data-answer="大量">に飲酒すると、<input type="button" class="question" data-answer="高血圧症">、<input type="button" class="question" data-answer="糖尿病">、<input type="button" class="question" data-answer="食道がん">、<input type="button" class="question" data-answer="アルコール性肝災">、<input type="button" class="question" data-answer="肝硬変">、<input type="button" class="question" data-answer="肝臓がん">、<input type="button" class="question" data-answer="胃潰瘍">、<input type="button" class="question" data-answer="脳の萎縮">などが起こりやすくなります。また、<input type="button" class="question" data-answer="アルコール依存症">になることもあります。</p>
+
+                        <h3>2 飲酒による社会問題</h3>
+                        <p>飲酒は、<input type="button" class="question" data-answer="健康影響">だけでなく、さまざまな<input type="button" class="question" data-answer="社会問題">をもたらします。<input type="button" class="question" data-answer="自制心">が弱くなることで、<input type="button" class="question" data-answer="暴力">など倫理的な問題を起こしたり、アルコール依存症になると、<input type="button" class="question" data-answer="家庭生活">や<input type="button" class="question" data-answer="仕事">で問題を起こしたりします。また、<input type="button" class="question" data-answer="自殺">に結びつくこともあります。<input type="button" class="question" data-answer="飲酒運転">は、<input type="button" class="question" data-answer="交通事故">を引き起こし、他人にも大きな被害をもたらすことがあります。</p>
+
+                    <h2>2 飲酒への対策</h2>
+                        <h3>1 飲酒の開始要因</h3>
+                        <p>飲酒を始める要因はさまざまです。<input type="button" class="question" data-answer="個人的">な要因では、飲酒や酒に対する<input type="button" class="question" data-answer="好奇心">、自分を<input type="button" class="question" data-answer="大切">にしたり社会の<input type="button" class="question" data-answer="規範">を守ったりする気持ちの<input type="button" class="question" data-answer="低下">などがあります。<input type="button" class="question" data-answer="社会的">な要因では、<input type="button" class="question" data-answer="友人">や<input type="button" class="question" data-answer="家族">など周囲の人の飲酒や飲酒の<input type="button" class="question" data-answer="誘い">、酒を<input type="button" class="question" data-answer="入手">しやすい環境などがあります。また、<input type="button" class="question" data-answer="マスメディア">による<input type="button" class="question" data-answer="宣伝">・<input type="button" class="question" data-answer="広告">、<input type="button" class="question" data-answer="ドラマ">の飲酒場面の放映、飲酒を過度に<input type="button" class="question" data-answer="肯定">する文化や飲酒の健康影響を<input type="button" class="question" data-answer="軽視">する風潮も影響します。</p>
+
+                        <h3>2 個人への対策</h3>
+                        <p>飲酒対策として、<input type="button" class="question" data-answer="正しい知識">の普及などのために、学校などでの<input type="button" class="question" data-answer="飲酒防止教育">、<input type="button" class="question" data-answer="ポスター">による啓発などがおこなわれています。また、<input type="button" class="question" data-answer="依存症">の治療のための<input type="button" class="question" data-answer="医療機関">が整備されたり、<input type="button" class="question" data-answer="断酒会">などの<input type="button" class="question" data-answer="自助グループ">も活動したりしています。</p>
+
+                        <h3>3 社会環境への対策</h3>
+                        <p>日本では、<input type="button" class="question" data-answer="20歳未満の者の飲酒の禁止に関する法律">や<input type="button" class="question" data-answer="アルコール健康障害対策基本法">などによって<input type="button" class="question" data-answer="20">歳未満の者の飲酒を禁止したり、<input type="button" class="question" data-answer="道路交通">法などによって<input type="button" class="question" data-answer="飲酒運転">を禁止したりしています。また、<input type="button" class="question" data-answer="広告">・<input type="button" class="question" data-answer="宣伝">の規制もおこなわれています。<br>飲酒は国際的な問題でもあります。<input type="button" class="question" data-answer="WHO">は、酒を販売できる<input type="button" class="question" data-answer="日">や<input type="button" class="question" data-answer="時間">の規制、<input type="button" class="question" data-answer="飲み放題">の規制、<input type="button" class="question" data-answer="宣伝">・<input type="button" class="question" data-answer="広告">やイベントの<input type="button" class="question" data-answer="スポンサー">の規制、酒の<input type="button" class="question" data-answer="価格値上げ">など、<input type="button" class="question" data-answer="国際的">に足並みを揃えた対策を提唱しています。</p>
+
+                </div>
+                <span class="tohome">ホームへ戻る</span>
+                </p>
+            </div>
+        
+            <div id="h_textbook_6" class="area"> <!--教科書 6-->
+                <p>
+                <div class="textbookarea">
+                    <!--ここに内容を入力-->
+                    <h1>11 薬物乱用と健康</h1>
+                    <h2>1 薬物乱用の影響</h2>
+                        <h3>1 薬物乱用の危険性</h3>
+                        <p><input type="button" class="question" data-answer="薬物乱用">とは、<input type="button" class="question" data-answer="違法薬物">の使用や<input type="button" class="question" data-answer="医薬品">を本来の目的からはずれて使用することです。乱用薬物は、<input type="button" class="question" data-answer="覚醒剤">、<input type="button" class="question" data-answer="大麻">、<input type="button" class="question" data-answer="MDMA">などさまざまな種類があります。薬物は、<input type="button" class="question" data-answer="脳">に直接働きかけて一時的に強い快感（<input type="button" class="question" data-answer="興奮">や<input type="button" class="question" data-answer="抑制">）をもたらしますが、本来の<input type="button" class="question" data-answer="自分らしさ">を失わせる危険性も高くなります。なぜなら、一度その快感を味わってしまうと、<input type="button" class="question" data-answer="満足">や<input type="button" class="question" data-answer="幸福">を得るために努力しようとする人間としての当たり前の気持ちがそこなわれてしまうからです。また、1回の乱用で<input type="button" class="question" data-answer="呼吸困難">や<input type="button" class="question" data-answer="けいれん">を引き起こし、<input type="button" class="question" data-answer="死ぬ">こともあります。</p>
+
+                        <h3>2 薬物乱用の社会影響</h3>
+                        <p>薬物は強い<input type="button" class="question" data-answer="依存性">をもつため、<input type="button" class="question" data-answer="乱用">をやめるのは非常に困難で、<input type="button" class="question" data-answer="薬物依存">におちいります。<input type="button" class="question" data-answer="薬物依存">では、薬物の<input type="button" class="question" data-answer="入手">と<input type="button" class="question" data-answer="乱用">が生活のなかで<input type="button" class="question" data-answer="最優先">となってしまい、自分の<input type="button" class="question" data-answer="夢">、<input type="button" class="question" data-answer="家族">や<input type="button" class="question" data-answer="友人関係">などに関心がなくなります。また、<input type="button" class="question" data-answer="自殺">の危険性も高くなります。<br>薬物乱用の危険は、<input type="button" class="question" data-answer="家族">や<input type="button" class="question" data-answer="友人">、<input type="button" class="question" data-answer="地域">や<input type="button" class="question" data-answer="社会">へと広がります。たとえば、薬物の購入資金は、<input type="button" class="question" data-answer="暴力団">などの犯罪組織の<input type="button" class="question" data-answer="維持">や<input type="button" class="question" data-answer="拡大">のための資金になります。それは、<input type="button" class="question" data-answer="犯罪の増加">や<input type="button" class="question" data-answer="治安の悪化">をもたらし、社会に大きな<input type="button" class="question" data-answer="不利益">を及ぼします。</p>
+
+                    <h2>2 薬物乱用の要因と対策</h2>
+                        <h3>1 薬物乱用の開始要因</h3>
+                        <p>薬物乱用の開始には、さまざまな要因がかかわります。<input type="button" class="question" data-answer="個人的">な要因では、<input type="button" class="question" data-answer="害">や<input type="button" class="question" data-answer="依存性">への<input type="button" class="question" data-answer="誤解">、低い<input type="button" class="question" data-answer="自尊感情">や<input type="button" class="question" data-answer="社会規範">を守る意識の低下などがあります。<input type="button" class="question" data-answer="社会的">な要因では、<input type="button" class="question" data-answer="周囲の人">からの誘い、薬物らしくない<input type="button" class="question" data-answer="俗称">や<input type="button" class="question" data-answer="形">での<input type="button" class="question" data-answer="巧妙">な誘い、<input type="button" class="question" data-answer="インターネット">や<input type="button" class="question" data-answer="SNS">の普及による薬物を<input type="button" class="question" data-answer="入手">しやすい環境などが考えられます。</p>
+
+                        <h3>2 薬物乱用への対策</h3>
+                        <p>薬物乱用防止のために、さまざまな対策がとられています。<input type="button" class="question" data-answer="個人">への対策としては、<input type="button" class="question" data-answer="正しい知識">の普及や薬物を<input type="button" class="question" data-answer="拒否">する価値観や<input type="button" class="question" data-answer="規範意識">の形成のために、<input type="button" class="question" data-answer="学校">での教育、<input type="button" class="question" data-answer="警察">などによる<input type="button" class="question" data-answer="啓発活動">をはじめ、個人に働きかけるさまざまな活動があります。<br>一方、社会環境への対策として、薬物が社会に広まることを防ぐために、わが国では、「<input type="button" class="question" data-answer="大麻取締法">」「<input type="button" class="question" data-answer="覚醒剤取締法">」などの法律が整備されています。また、薬物の多くが海外から<input type="button" class="question" data-answer="密輸">されるため、空港などで<input type="button" class="question" data-answer="麻薬探知犬">などによる<input type="button" class="question" data-answer="摘発活動">がおこなわれています。国際的には、<input type="button" class="question" data-answer="国連薬物・犯罪事務所">の活動や各国警察間での連携した取り組みなどがあります。<br>薬物乱用を経験した人には<input type="button" class="question" data-answer="再使用">のリスクがあります。それを防ぐためには、<input type="button" class="question" data-answer="医療機関">での治療だけでなく、互いに励ましあうような<input type="button" class="question" data-answer="自助グループ">や<input type="button" class="question" data-answer="リハビリ施設">による活動や、経験者を<input type="button" class="question" data-answer="孤立">させない社会づくりが必要です。</p>
+
+
+                </div>
+                <span class="tohome">ホームへ戻る</span>
+                </p>
+            </div>
+        </div>
+    
+    
+    
+    </div>
+
+<!--https://qiita.com/umamichi/items/0e2b4b1c578e7335ba20-->
+
+</body>
+</html>
