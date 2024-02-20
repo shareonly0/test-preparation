@@ -1,6 +1,6 @@
 {
   "name": "PWA Sample",
-  "short_name": "PWA",
+  "short_name": "保健",
   "background_color": "#fc980c",
   "icons": [{
       "src": "./icon-256.png",
