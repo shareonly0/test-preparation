@@ -13,7 +13,7 @@ self.addEventListener('fetch', function(event) {});
 */
 
 // キャッシュしたいファイルの一覧を指定 --- (*1)
-const cacheFiles = ['index.html', ''];
+const cacheFiles = ['index.html', 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'];
 const cacheName = 'v1';
 // インストール時に実行されるイベント --- (*2)
 self.addEventListener('install', event => {
